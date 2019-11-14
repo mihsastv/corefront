@@ -9,6 +9,9 @@ import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.co
 import { RegisterPageComponent } from './register-page/register-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { OwerviewComponent } from './owerview/owerview.component';
+import {AuthGuard} from './shared/services/auth.guard';
+import { Owerview1Component } from './owerview1/owerview1.component';
 
 
 @NgModule({
@@ -18,6 +21,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     AuthLayoutComponent,
     SiteLayoutComponent,
     RegisterPageComponent,
+    OwerviewComponent,
+    Owerview1Component,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

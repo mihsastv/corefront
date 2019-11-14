@@ -5,6 +5,7 @@
 >
   <div class="card-content">
     <span class="card-title">Войти в систему</span>
+
     <div class="input-field">
       <input
         formControlName="email"
@@ -30,16 +31,20 @@
         class="helper-text red-text">
           Пароль должен быть {{form.get('password').errors['minlength']['requireLength']}} символов
       </span>
+    </div>
+    <div class="red-text" *ngIf="accessDenied">
 
+      Необходимо войти в систему
     </div>
   </div>
-  <div class="card-action">
+  <div class="col card-action">
     <button
-      [disabled]="form.invalid"
+      [disabled]="form.invalid || form.disabled"
       class="modal-action btn waves-effect"
       type="submit"
     >
       Войти
     </button>
+
   </div>
 </form>
